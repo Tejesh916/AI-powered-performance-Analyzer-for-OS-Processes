@@ -11,7 +11,12 @@ def analyze_process_logs():
         sys.stdout.reconfigure(encoding='utf-8')
         print("Loading data...")
         
-        data = pd.read_csv('process_logs.csv').fillna(0)
+        try:
+            data = pd.read_csv('process_logs.csv').fillna(0)
+        except FileNotFoundError:
+            print("Warning: process_logs.csv not found. Creating a new file.")
+            data = pd.DataFrame(columns=['Timestamp', 'ProcessName', 'PID', 'CPU', 'Memory', 'Status'])
+
         
         with open('optimization_rules.json', encoding='utf-8') as f:
             optimizations = json.load(f)
