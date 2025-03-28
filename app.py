@@ -49,8 +49,8 @@ def main():
                 f.write("No critical processes found\n")
 
         # Visual report
-        fig = px.line(data, x='Timestamp', y='CPU', 
-                     color='ProcessName', title='CPU Usage')
+        fig = px.line(data, x='Timestamp', y=['CPU', 'Memory'], 
+              color='ProcessName', title='CPU & Memory Usage')
         fig.write_html('cpu_usage.html')
 
         logging.info("Success! Reports generated.")
