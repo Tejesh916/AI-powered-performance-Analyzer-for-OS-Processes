@@ -75,7 +75,9 @@ while($true) {
     }
     
     $processes | Format-Table -AutoSize
+    if (!(Test-Path "process_logs.csv") -or (Get-Content "process_logs.csv" -Tail 1 | Select-String -NotMatch $timestamp)) {
     $processes | Export-Csv -Path "process_logs.csv" -Append -NoTypeInformation -Force
+    }
     Start-Sleep -Seconds 3
 }
 '''
