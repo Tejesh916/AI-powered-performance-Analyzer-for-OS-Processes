@@ -1,17 +1,25 @@
-# Process Monitor & Performance Analyzer
-This project provides real-time process monitoring, risk assessment, and performance optimization using machine learning techniques. It logs system resource usage, detects potential bottlenecks, and generates interactive reports to help analyze CPU and memory consumption trends.
+# **Process Monitor & Performance Analyzer**  
+This project provides **real-time process monitoring, risk assessment, and performance optimization** using machine learning techniques. It logs system resource usage, detects potential bottlenecks, and generates interactive reports to help analyze CPU and memory consumption trends.  
 
-## 📌 Features
- ✅ Real-time process monitoring: Tracks active processes and logs CPU & memory usage every few seconds.
- ✅ Machine learning-based risk analysis: Uses a RandomForest model to classify process status as NORMAL, WARNING, or CRITICAL.
- ✅ Automated reports: Generates text-based and graphical performance reports for easy analysis.
- ✅ Interactive CPU & Memory usage charts: View real-time trends through a web-based visualization.
- ✅ Optimization recommendations: Suggests possible performance optimizations based on critical processes.
+---
 
-## 🚀 Setup & Installation
-1️⃣ Install Dependencies
-Before running the scripts, ensure you have Python installed. Then, install the required libraries:
+## **📌 Features**  
+✅ **Real-time process monitoring**: Tracks active processes and logs CPU & memory usage every few seconds.  
+✅ **Machine learning-based risk analysis**: Uses a RandomForest model to classify process status as `NORMAL`, `WARNING`, or `CRITICAL`.  
+✅ **Automated reports**: Generates text-based and graphical performance reports for easy analysis.  
+✅ **Interactive CPU & Memory usage charts**: View real-time trends through a web-based visualization.  
+✅ **Optimization recommendations**: Suggests possible performance optimizations based on critical processes.  
+
+---
+
+## **🚀 Setup & Installation**  
+
+### **1️⃣ Install Dependencies**  
+Before running the scripts, ensure you have Python installed. Then, install the required libraries:  
+
+```sh
 pip install pandas scikit-learn plotly
+
 
 2️⃣ Running the Monitoring Script
 Execute the real-time process monitoring script:
