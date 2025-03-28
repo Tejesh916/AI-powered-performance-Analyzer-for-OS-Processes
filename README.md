@@ -19,20 +19,24 @@ Before running the scripts, ensure you have Python installed. Then, install the 
 
 ```sh
 pip install pandas scikit-learn plotly
+```
 
-
-2️⃣ Running the Monitoring Script
+### **2️⃣ Running the Monitoring Script**
 Execute the real-time process monitoring script:
+```sh
 python monitor.py
+```
 
-3️⃣ View Reports & Analysis
+### **3️⃣ View Reports & Analysis**
 Performance Summary: Open performance_report.txt to review identified bottlenecks.
 
 Interactive Chart: Open cpu_usage.html in a web browser to analyze CPU & memory trends visually.
 
 Raw Logs: View process_logs.csv for detailed process usage data.
 
-## 📊 How It Works
+---
+
+## **📊 How It Works**
 Process Monitoring (PowerShell Script)
 Collects process details (Process Name, CPU Usage, Memory Usage).
 Logs data in process_logs.csv every few seconds.
@@ -43,7 +47,10 @@ Trains a RandomForestClassifier to predict process risk levels.
 Generates performance reports (performance_report.txt and cpu_usage.html).
 Provides optimization recommendations for critical processes.
 
-## 📂 File Structure
+---
+
+## **📂 File Structure**
+```sh
 📁 Process-Monitor-Analyzer/
 │── monitor.py                  # Python script for analysis & visualization  
 │── monitor_processes.ps1       # PowerShell script for real-time process monitoring  
@@ -51,9 +58,13 @@ Provides optimization recommendations for critical processes.
 │── performance_report.txt      # Text-based performance analysis report (auto-generated)  
 │── cpu_usage.html              # Interactive CPU & Memory graph (auto-generated)  
 │── optimization_rules.json     # JSON file storing optimization recommendations  
-│── README.md                   # Project documentation  
+│── README.md                   # Project documentation
+```
 
-## 📌 Example Output
+---
+
+## **📌 Example Output**
+```sh
 Performance Report (performance_report.txt)
 === Performance Report ===
 Generated: 2025-03-28 14:30:15
@@ -66,14 +77,21 @@ python.exe     45.3   620.1
 Recommendations:
 chrome.exe: Reduce tab usage, Enable hardware acceleration, Disable unnecessary extensions
 python.exe: Optimize script logic, Reduce memory-intensive operations, Use multiprocessing
+```
 
-## Graphical Report (cpu_usage.html)
- ✅ Displays CPU & Memory usage trends over time.
- ✅ Interactive filters to focus on specific processes.
- ✅ Helps visualize performance bottlenecks.
+---
 
-## 📢 Contributing
+## **Graphical Report (cpu_usage.html)**
+ ✅ **Displays CPU & Memory usage trends over time.
+ ✅ **Interactive filters to focus on specific processes.
+ ✅ **Helps visualize performance bottlenecks.
+
+---
+
+## **📢 Contributing**
 Feel free to contribute by improving the scripts, adding new monitoring metrics, or refining the ML model. Fork the repo, make changes, and submit a pull request!
 
-## 📧 Contact
+---
+
+## **📧 Contact**
 For any questions or suggestions, reach out at [tejeshmaddala@gmail.com].
