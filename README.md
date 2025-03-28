@@ -1,14 +1,14 @@
-#Process Monitor & Performance Analyzer
+# Process Monitor & Performance Analyzer
 This project provides real-time process monitoring, risk assessment, and performance optimization using machine learning techniques. It logs system resource usage, detects potential bottlenecks, and generates interactive reports to help analyze CPU and memory consumption trends.
 
-#📌 Features
+## 📌 Features
 ✅ Real-time process monitoring: Tracks active processes and logs CPU & memory usage every few seconds.
 ✅ Machine learning-based risk analysis: Uses a RandomForest model to classify process status as NORMAL, WARNING, or CRITICAL.
 ✅ Automated reports: Generates text-based and graphical performance reports for easy analysis.
 ✅ Interactive CPU & Memory usage charts: View real-time trends through a web-based visualization.
 ✅ Optimization recommendations: Suggests possible performance optimizations based on critical processes.
 
-#🚀 Setup & Installation
+## 🚀 Setup & Installation
 1️⃣ Install Dependencies
 Before running the scripts, ensure you have Python installed. Then, install the required libraries:
 pip install pandas scikit-learn plotly
@@ -24,7 +24,7 @@ Interactive Chart: Open cpu_usage.html in a web browser to analyze CPU & memory 
 
 Raw Logs: View process_logs.csv for detailed process usage data.
 
-#📊 How It Works
+## 📊 How It Works
 Process Monitoring (PowerShell Script)
 
 Collects process details (Process Name, CPU Usage, Memory Usage).
@@ -43,7 +43,7 @@ Generates performance reports (performance_report.txt and cpu_usage.html).
 
 Provides optimization recommendations for critical processes.
 
-#📂 File Structure
+## 📂 File Structure
 📁 Process-Monitor-Analyzer/
 │── monitor.py                # Python script for analysis & visualization  
 │── monitor_processes.ps1      # PowerShell script for real-time process monitoring  
@@ -53,7 +53,7 @@ Provides optimization recommendations for critical processes.
 │── optimization_rules.json    # JSON file storing optimization recommendations  
 │── README.md                  # Project documentation  
 
-#📌 Example Output
+## 📌 Example Output
 Performance Report (performance_report.txt)
 === Performance Report ===
 Generated: 2025-03-28 14:30:15
@@ -67,13 +67,13 @@ Recommendations:
 chrome.exe: Reduce tab usage, Enable hardware acceleration, Disable unnecessary extensions
 python.exe: Optimize script logic, Reduce memory-intensive operations, Use multiprocessing
 
-#Graphical Report (cpu_usage.html)
+## Graphical Report (cpu_usage.html)
 ✅ Displays CPU & Memory usage trends over time.
 ✅ Interactive filters to focus on specific processes.
 ✅ Helps visualize performance bottlenecks.
 
-#📢 Contributing
+## 📢 Contributing
 Feel free to contribute by improving the scripts, adding new monitoring metrics, or refining the ML model. Fork the repo, make changes, and submit a pull request!
 
-#📧 Contact
+## 📧 Contact
 For any questions or suggestions, reach out at [tejeshmaddala@gmail.com].
