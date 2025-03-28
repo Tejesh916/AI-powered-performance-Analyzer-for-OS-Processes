@@ -26,7 +26,7 @@ def main():
         X = data[['CPU', 'Memory']]
         y = data['Status'].map({'NORMAL': 0, 'WARNING': 1, 'CRITICAL': 2}).fillna(0)
         
-        model = RandomForestClassifier()
+        model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
         model.fit(X, y)
         data['Risk'] = model.predict(X)
 
