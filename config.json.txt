@@ -1,0 +1,23 @@
+{
+  "logging_interval_seconds": 5,
+  "cpu_thresholds": {
+    "normal": 50,
+    "warning": 75,
+    "critical": 90
+  },
+  "memory_thresholds": {
+    "normal": 1024,
+    "warning": 2048,
+    "critical": 4096
+  },
+  "model_parameters": {
+    "n_estimators": 100,
+    "max_depth": 5,
+    "random_state": 42
+  },
+  "report_settings": {
+    "enable_text_report": true,
+    "enable_visual_report": true,
+    "output_directory": "reports/"
+  }
+}

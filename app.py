@@ -4,7 +4,8 @@ import plotly.express as px
 import json
 from datetime import datetime
 import sys
-import logging  # Add logging module
+import logging
+import os  # To check file existence
 
 # Configure logging
 logging.basicConfig(filename='process_monitor.log', level=logging.INFO, 
@@ -16,9 +17,36 @@ def main():
         # Force UTF-8 encoding
         sys.stdout.reconfigure(encoding='utf-8')
         
+        # Check if required files exist
+        if not os.path.exists('process_logs.csv'):
+            logging.error("Missing file: process_logs.csv")
+            print("Error: process_logs.csv not found.")
+            return
+
+        if not os.path.exists('optimization_rules.json'):
+            logging.error("Missing file: optimization_rules.json")
+            print("Error: optimization_rules.json not found.")
+            return
+
         logging.info("Loading data...")
         data = pd.read_csv('process_logs.csv').fillna(0)
-        
+
+        # Ensure required columns exist
+        required_columns = {'ProcessName', 'CPU', 'Memory', 'Status', 'Timestamp'}
+        if not required_columns.issubset(data.columns):
+            logging.error("Missing required columns in process_logs.csv")
+            print(f"Error: Required columns missing: {required_columns - set(data.columns)}")
+            return
+
+        # Ensure timestamp column is properly formatted
+        try:
+            data['Timestamp'] = pd.to_datetime(data['Timestamp'])
+        except Exception as e:
+            logging.error(f"Invalid timestamp format: {str(e)}")
+            print("Error: Invalid timestamp format in process_logs.csv")
+            return
+
+        # Load optimizations
         with open('optimization_rules.json', encoding='utf-8') as f:
             optimizations = json.load(f)
 
@@ -26,6 +54,12 @@ def main():
         X = data[['CPU', 'Memory']]
         y = data['Status'].map({'NORMAL': 0, 'WARNING': 1, 'CRITICAL': 2}).fillna(0)
         
+        # Ensure that there are enough samples for training
+        if len(y.unique()) < 2:
+            logging.error("Not enough data variation for model training.")
+            print("Error: Not enough data for model training.")
+            return
+
         model = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
         model.fit(X, y)
         data['Risk'] = model.predict(X)
@@ -50,7 +84,14 @@ def main():
 
         # Visual report
         fig = px.line(data, x='Timestamp', y=['CPU', 'Memory'], 
-              color='ProcessName', title='CPU & Memory Usage')
+                      color='ProcessName', title='CPU & Memory Usage')
+
+        # Check if data has valid timestamps
+        if data['Timestamp'].isnull().all():
+            logging.error("All timestamps are null, skipping plot.")
+            print("Error: No valid timestamps for plotting.")
+            return
+
         fig.write_html('cpu_usage.html')
 
         logging.info("Success! Reports generated.")
