@@ -81,12 +81,11 @@ python.exe: Optimize script logic, Reduce memory-intensive operations, Use multi
 
 ---
 
-## **Graphical Report (cpu_usage.html)**
-```diff
- ✅ Displays CPU & Memory usage trends over time.
- ✅ Interactive filters to focus on specific processes.
- ✅ Helps visualize performance bottlenecks.
-```
+### **Graphical Report (`cpu_usage.html`)**  
+
+✅ **Real-time visualization** of CPU & Memory usage trends over time.  
+✅ **Interactive filters** allow focusing on specific processes for detailed analysis.  
+✅ **Helps identify and diagnose** potential performance bottlenecks efficiently.  
 
 ---
 
