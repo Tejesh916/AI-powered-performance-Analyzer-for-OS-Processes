@@ -95,4 +95,4 @@ Feel free to contribute by improving the scripts, adding new monitoring metrics,
 ---
 
 ## **📧 Contact**
-For any questions or suggestions, reach out at [tejeshmaddala@gmail.com].
+For any questions or suggestions, reach out at [tejeshmaddala916@gmail.com].
