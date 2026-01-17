@@ -47,6 +47,54 @@ Trains a RandomForestClassifier to predict process risk levels.
 Generates performance reports (performance_report.txt and cpu_usage.html).
 Provides optimization recommendations for critical processes.
 
+--- 
+
+### **🛠️ Technologies Used**
+
+This project utilizes a combination of **data analysis, machine learning, and visualization tools** to provide actionable insights into process performance.
+
+- **Python**: Primary programming language for data analysis and reporting.
+- **Pandas**: Handles data preprocessing and analysis.
+- **Scikit-learn**: Implements the RandomForestClassifier for risk prediction.
+- **Plotly**: Creates interactive CPU & memory usage charts.
+- **PowerShell**: Collects real-time system resource usage.
+- **JSON**: Stores optimization rules for performance recommendations.
+
+---
+
+### **🔧 Configuration & Customization**
+
+To customize the monitoring and analysis, you can modify the following parameters:
+
+1️⃣ **Change Logging Frequency**  
+   - The **PowerShell script** (`monitor_processes.ps1`) logs data every few seconds. Adjust this by modifying the interval in the script.
+
+2️⃣ **Modify Machine Learning Model Parameters**  
+   - The RandomForestClassifier uses `n_estimators=100` and `max_depth=5` by default. Modify these parameters in `monitor.py` to experiment with different model configurations.
+
+3️⃣ **Update Optimization Recommendations**  
+   - Modify `optimization_rules.json` to customize performance tuning recommendations for different processes.
+
+---
+
+### **📈 Performance Metrics & Insights**
+
+This project helps analyze **resource-intensive processes** by providing key insights:
+
+✅ **CPU & Memory Spikes** – Identify processes that cause high CPU or memory usage.  
+✅ **Process Trends** – Understand long-term performance patterns.  
+✅ **Critical Process Detection** – Alerts when a process reaches a high-risk threshold.  
+✅ **Optimization Suggestions** – Provides actionable tips to improve system performance.
+
+---
+
+### **🛠️ Future Enhancements**
+
+🔹 **Real-time Alerting System** – Implement email/SMS alerts for critical processes.  
+🔹 **Docker Support** – Package the scripts into a Docker container for easy deployment.  
+🔹 **More ML Models** – Test different classification models for better accuracy.  
+🔹 **Web Dashboard** – Build a frontend dashboard for live monitoring.
+
 ---
 
 ## **📂 File Structure**
